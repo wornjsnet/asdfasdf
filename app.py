@@ -48,7 +48,7 @@ st.set_page_config(layout='wide')
 st.header('영화 추천 시스템')
 
 movie_list = movies['title'].values
-title = st.selectbox('Choose a movie you like', movie_list)
+title = st.selectbox('영화를 선택하세요', movie_list)
 if st.button('추천'):
     with st.spinner('로딩중..'):
         images, titles = get_recommendations(title)
