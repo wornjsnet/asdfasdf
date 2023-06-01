@@ -45,12 +45,12 @@ movies = pickle.load(open('movies.pickle', 'rb'))
 cosine_sim = pickle.load(open('cosine_sim.pickle', 'rb'))
 
 st.set_page_config(layout='wide')
-st.header('Nadoflix')
+st.header('영화 추천 시스템')
 
 movie_list = movies['title'].values
 title = st.selectbox('Choose a movie you like', movie_list)
-if st.button('Recommend'):
-    with st.spinner('Please wait...'):
+if st.button('추천'):
+    with st.spinner('로딩중..'):
         images, titles = get_recommendations(title)
 
         idx = 0
